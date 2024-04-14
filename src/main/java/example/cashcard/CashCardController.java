@@ -23,6 +23,7 @@ public class CashCardController {
     public String findAll(Model model) {
         List<CashCardDto> cashcards = cashCardRepository.findAll().stream()
             .map(c -> new CashCardDto(c.id(), c.amount(),  new UserDto(c.owner()))).toList();
+        // List<CashCard> cashcards = cashCardRepository.findAll();
         model.addAttribute("cashcards", cashcards);
         return "list.html";
     }

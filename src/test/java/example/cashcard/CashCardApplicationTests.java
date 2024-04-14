@@ -1,6 +1,7 @@
 package example.cashcard;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -29,6 +30,7 @@ class CashCardApplicationTests {
     }
 
     @Test
+    // @DisabledInNativeImage
     void htmlBanner() throws IOException {
         ClassPathResource resource = new ClassPathResource("cashcard-banner.txt");
         String banner = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
